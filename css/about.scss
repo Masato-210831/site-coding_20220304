@@ -1,0 +1,435 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: "Montserrat", "Montserrat Medium", "Noto Sans JP";
+  position: relative;
+}
+
+.wrapper {
+  max-width: 1600px;
+  padding: 0 150px;
+  margin: 0 auto;
+
+  @media screen and (max-width:960px) {
+    padding: 0 50px;
+  }
+
+  @media screen and (max-width:480px) {
+    padding: 0 20px;
+  }
+}
+
+.sub-title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  
+}
+
+.content-text {
+  font-family: "Montserrat light";
+  font-size: 1rem;
+}
+
+.read-more {
+  background: #000;
+  width: 140px;
+  height: 35px;
+  text-align: center;
+  margin-top: 30px;
+
+  a {
+    color: #fff;
+    font-size: 0.6rem;
+    line-height: 35px;
+  }
+}
+
+// ---------
+// header
+// ---------
+#header {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  z-index: 20;
+
+  @media screen and (max-width:480px) {
+    height: 60px;
+  }
+
+  .header-container{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+
+    @media screen and (max-width:480px) {
+      padding: 0 20px;
+    }
+
+    // サイトロゴ
+    #site-logo {
+      width: 250px;
+
+      a img {
+        width: 100%;
+      }
+    }
+
+    // 隠しメニュー
+    #menu-list-container {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      bottom: 0;
+      background: #000;
+      opacity: 0;
+      width: 400px;
+      padding: 100px;
+      z-index: 10;
+      transition: .3s;
+
+      #menu-list {
+        text-align: center;
+
+
+        #menu-image {
+          width: 50px;
+          margin: 0 auto 30px;
+
+          a img {
+            width: 100%;
+          }
+        }
+      }
+
+      #menu-context {
+
+        li {
+          margin-bottom: 30px;
+          font-size: 1.2rem;
+
+          a {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    // link-btn
+    #link-btn {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      color: #fff;
+      z-index: 15;
+
+      .hamburger-btn {
+        height: 14px;
+        width: 30px;
+        position: relative;
+        margin-right: 10px;
+
+        span {
+          display: block;
+          height: 2px;
+          width: 100%;
+          background: #fff;
+          position: absolute;
+          border-radius: 5px;
+          transition: .3s;
+
+          &:nth-child(2) {
+            top: 7px;
+          }
+
+          &:nth-child(3) {
+            top: 14px;
+          }
+        }
+      }
+
+      .menu-heading {
+        font-size: 18px;
+      }
+    }
+  }
+
+  // ハンバガーボタンオープン時
+  &.open {
+
+    // マスク
+    #mask {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgb(97, 97, 97);
+      opacity: 0.4;
+      cursor: pointer;
+    }
+
+    // 隠しメニュー
+    #menu-list-container {
+      right: 0;
+      opacity: .8;
+    }
+
+    #link-btn span {
+
+      &:nth-child(1) {
+        top: 7px;
+        transform: rotate(220deg);
+      }
+
+      &:nth-child(2) {
+        display: none;
+      }
+
+      &:nth-child(3) {
+        transform: translateY(-7px) rotate(-220deg) ;
+      }
+    }
+  }
+
+}
+
+//---------------------
+// トップ画面
+//---------------------
+#top-screen-container {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  z-index: 0;
+
+  @media screen and (max-width:960px) {
+    height: 615px;
+  }
+
+  #top-screen {
+    position: absolute;
+    width: 70%;
+    height: 90%;
+    overflow: hidden;
+    z-index: 10;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  #blackarea {
+    width: 50%;
+    height: 100%;
+    background: #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+  }
+
+  .blackarea-text {
+    color: #fff;
+    position: absolute;
+    top: 30%;
+    right: 18%;
+    z-index: 20;
+
+    @media screen and (max-width:480px) {
+      top: 25%;
+      right: 35px;
+    }
+    
+    p {
+      font-size: 1.5rem;
+      font-family: "Montserrat light";
+    }
+
+    h1 {
+      font-size: 5rem;
+      line-height: 6rem;
+
+      @media screen and (max-width:480px) {
+       font-size: 4rem;
+      }
+    }
+  }
+
+}
+
+
+//-------------
+// vision
+//-------------
+#vision {
+  margin-top: 200px;
+
+  .vision-container {
+    margin-left: 25%;
+
+    @media screen and (max-width:480px) {
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+
+//---------------
+// ceo message 
+//---------------
+#ceo-message {
+  margin-top: 100px;
+  min-height: 950px;
+  
+  @media screen and (max-width:480px) {
+    min-height: 1100px;
+  }
+
+  .mg-whole-container {
+    width: 100%;
+    position: relative;
+
+    img {
+      width: 400px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+
+      @media screen and (max-width:480px) {
+        position: relative;
+        top: 0px;
+        left: -20px;
+       }
+    }
+
+    #content-area {
+      position: absolute;
+      top: 150px;
+      right: 0;
+      left: 300px;
+      background: #ddd;
+      // width: 800px;
+      z-index: 1;
+      padding: 100px 0 100px;
+
+      @media screen and (max-width:960px) {
+        top: 180px;
+      }
+
+      @media screen and (max-width:480px) {
+        top: 200px;
+        left: 0;
+        width: 100%;
+      }
+  
+      #message-container {
+        width: 100%;
+        padding: 0 25%;
+
+         @media screen and (max-width:960px) {
+           padding: 0 10%;
+      }
+
+        p {
+          margin-bottom: 20px;
+          line-height: 1.8rem;
+        }
+      }
+    }
+  }
+
+
+}
+
+
+// -------------
+// company
+// -------------
+#company {
+  .sub-title {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+  }
+
+  #company-contents {
+    width: 60%;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: 20% 1fr;
+
+    @media screen and (max-width:960px) {
+      padding-left: 30px;
+      width: 100%;
+    }
+
+    @media screen and (max-width:480px) {
+      padding: 0;
+      grid-template-columns: 50% 50%;
+    }
+  
+
+    dt {
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+      font-weight: bold;
+    }
+
+    dd {
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+      font-family: "Montserrat Medium";
+    }
+  }
+
+  iframe {
+    height: 450px;
+    margin-top: 40px;
+
+    @media screen and (max-width:960px) {
+      height: 300px;
+    }
+
+    @media screen and (max-width:480px) {
+      height: 470px;
+    }
+  }
+}
+
+
+//-----------------
+// footer
+//-----------------
+#footer {
+  margin-top: 150px;
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+
+  p {
+    font-size: 0.8rem;
+    font-family:  "Montserrat light";
+  }
+}
+

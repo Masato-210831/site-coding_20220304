@@ -1,0 +1,585 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: "Montserrat", "Montserrat Medium", "Noto Sans JP";
+  position: relative;
+}
+
+.wrapper {
+  max-width: 1600px;
+  padding: 0 150px;
+  margin: 0 auto;
+
+  @media screen and (max-width:960px) {
+    padding: 0 50px;
+  }
+
+  @media screen and (max-width:480px) {
+    padding: 0 20px;
+  }
+}
+
+.sub-title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+
+  @media screen and (max-width:480px) {
+    margin-bottom: 40px;
+  }
+}
+
+.content-text {
+  font-family: "Montserrat light";
+  font-size: 1rem;
+  line-height: 2rem;
+
+  @media screen and (max-width:960px) {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+  }
+
+  @media screen and (max-width:480px) {
+    font-size: 1rem;
+    line-height: 2em;
+  }
+}
+
+.read-more {
+  background: #000;
+  width: 140px;
+  height: 35px;
+  text-align: center;
+  margin-top: 30px;
+
+  @media screen and (max-width:480px) {
+    width: 180px;
+    height: 40px;
+  }
+
+  a {
+    color: #fff;
+    font-size: 0.6rem;
+    line-height: 35px;
+
+    @media screen and (max-width:480px) {
+      font-size: 0.8rem;
+      line-height: 40px;
+    }
+  }
+}
+
+// ---------
+// header
+// ---------
+#header {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  z-index: 20;
+
+  .header-container{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+
+    @media screen and (max-width:960px) {
+      padding: 0 25px;
+    }
+
+    @media screen and (max-width:480px) {
+      padding: 10px 15px 0;
+      align-items: baseline;
+    }
+
+    // サイトロゴ
+    #site-logo {
+      width: 250px;
+
+      @media screen and (max-width:960px) {
+       width: 190px;
+      }
+
+      a img {
+        width: 100%;
+      }
+    }
+
+    // 隠しメニュー
+    #menu-list-container {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      bottom: 0;
+      background: #000;
+      opacity: 0;
+      width: 400px;
+      padding: 100px;
+      z-index: 10;
+      transition: .3s;
+
+      #menu-list {
+        text-align: center;
+
+
+        #menu-image {
+          width: 50px;
+          margin: 0 auto 30px;
+
+          a img {
+            width: 100%;
+          }
+        }
+      }
+
+      #menu-context {
+
+        li {
+          margin-bottom: 30px;
+          font-size: 1.2rem;
+
+          a {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    // link-btn
+    #link-btn {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      color: #fff;
+      z-index: 15;
+
+      .hamburger-btn {
+        height: 14px;
+        width: 30px;
+        position: relative;
+        margin-right: 10px;
+
+        span {
+          display: block;
+          height: 2px;
+          width: 100%;
+          background: #fff;
+          position: absolute;
+          border-radius: 5px;
+          transition: .3s;
+
+          &:nth-child(2) {
+            top: 7px;
+          }
+
+          &:nth-child(3) {
+            top: 14px;
+          }
+        }
+      }
+
+      .menu-heading {
+        font-size: 18px;
+      }
+    }
+  }
+
+  // ハンバガーボタンオープン時
+  &.open {
+
+    // マスク
+    #mask {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgb(97, 97, 97);
+      opacity: 0.4;
+      cursor: pointer;
+    }
+
+    // 隠しメニュー
+    #menu-list-container {
+      right: 0;
+      opacity: .8;
+    }
+
+    #link-btn span {
+
+      &:nth-child(1) {
+        top: 7px;
+        transform: rotate(220deg);
+      }
+
+      &:nth-child(2) {
+        display: none;
+      }
+
+      &:nth-child(3) {
+        transform: translateY(-7px) rotate(-220deg) ;
+      }
+    }
+  }
+
+}
+
+//---------------------
+// トップ画面
+//---------------------
+#top-screen-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 0;
+
+  @media screen and (max-width:960px) {
+    height: 1000px;
+  }
+  
+  @media screen and (max-width:480px) {
+    height: 660px;
+  }
+
+  #top-screen {
+    position: absolute;
+    width: 70%;
+    height: 90%;
+    overflow: hidden;
+    z-index: 10;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  #blackarea {
+    width: 50%;
+    height: 100%;
+    background: #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+  }
+
+  .blackarea-text {
+    color: #fff;
+    position: absolute;
+    top: 20%;
+    right: 18%;
+    z-index: 20;
+
+    @media screen and (max-width:960px) {
+      top: 30%;
+    }
+
+    @media screen and (max-width:480px) {
+      top: 27%;
+      right: 0;
+    }
+    
+    p {
+      font-size: 1.5rem;
+
+      @media screen and (max-width:480px) {
+        font-size: 1.1rem;
+      }
+    }
+
+    h1 {
+      font-size: 5rem;
+      line-height: 6rem;
+
+      @media screen and (max-width:960px) {
+        line-height: 5rem;
+      }
+
+      @media screen and (max-width:480px) {
+        margin-top: 10px;
+        font-size: 4rem;
+        line-height: 4rem;
+      }
+    }
+  }
+
+}
+
+//----------------------
+// about us
+// ----------------------
+#about {
+  margin-top: 100px;
+
+  @media screen and (max-width:960px) {
+    padding: 0;
+  }
+
+  #about-img {
+    position: relative;
+    max-width: 1600px;
+    
+    img {
+      width: 100%;
+
+      @media screen and (max-width:480px) {
+        height: 590px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  #about-content-area {
+    position: absolute;
+    top: calc((100% - 65%) / 2);
+    left: 5%;
+    width: 55%;
+    height: 65%;
+    background: #fff;
+    opacity: .9;
+    padding: 40px 25px;
+    overflow: scroll;
+
+    @media screen and (max-width:960px) {
+      top: calc((100% - 75%) / 2);
+      left: calc((100% - 75%) / 2);
+      height: 75%;
+      width: 75%;
+    }
+
+    @media screen and (max-width:480px) {
+      top: calc((100% - 80%) / 2);
+      left: calc((100% - 90%) / 2);
+      height: 80%;
+      width: 90%;
+      padding: 40px 40px;
+    }
+
+    .sub-title {
+      margin-bottom: 15px;
+
+      @media screen and (max-width:480px) {
+        margin-bottom: 20px;
+      }
+    }
+
+  }
+}
+
+//----------------------
+// works & culture
+//----------------------
+#works_culture {
+  position: relative;
+ 
+  #back-layer {
+    position: absolute;
+    background:#ddd;
+    top: -200px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .works-culture-container {
+    margin-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width:960px) {
+      flex-direction: column;
+    }
+
+    #works {
+      width: 47%;
+
+      @media screen and (max-width:960px) {
+        width: 70%;
+        margin-bottom: 100px;
+      }
+
+      @media screen and (max-width:480px) {
+        width: 100%;
+        margin-bottom: 50px;
+      }
+    }
+  
+    #culture {
+      width: 47%;
+
+      @media screen and (max-width:960px) {
+        width: 70%;
+      }
+
+      @media screen and (max-width:480px) {
+        width: 100%;
+      }
+    }
+
+    .content-text {
+      margin: 20px 0;
+
+      @media screen and (max-width:480px) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  }
+  
+//-----------------------
+// latest topics
+//-----------------------
+#latest-topics {
+  margin-top: 50px;
+
+  .subtitle-container {
+    width: 40%;
+
+    @media screen and (max-width:960px) {
+      width: 100%;
+    }
+  }
+
+  #topics-container {
+    width: 60%;
+    margin-left: auto;
+
+    @media screen and (max-width:960px) {
+      margin: 0;
+      width: 100%;
+    }
+
+    #topics-contents {
+
+      dt {
+        font-size: 0.7rem;
+        color: #ddd;
+        margin-top: 30px;
+
+        @media screen and (max-width:960px) {
+          font-size: 1rem;
+        }
+
+        @media screen and (max-width:480px) {
+          font-size: 0.8rem;
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      dd {
+        font-family: "Montserrat light";
+        font-size: 0.9rem;
+        font-weight: bold;
+        border-bottom: 1px solid #ddd;
+        padding: 8px 0;
+
+        @media screen and (max-width:960px) {
+          font-size: 1.2rem;
+        }
+
+        @media screen and (max-width:480px) {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .read-more {
+      margin-left: auto;
+
+      @media screen and (max-width:960px) {
+        margin: 30px 0 0;
+      }
+    }
+  }
+}
+
+//------------------
+// contact
+//------------------
+#contact {
+  margin-top: 50px;
+  background: #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (max-width:960px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &.wrapper {
+    padding: 50px 200px 100px;
+
+    @media screen and (max-width:960px) {
+      padding: 50px 50px 150px;
+    }
+
+    @media screen and (max-width:480px) {
+      padding: 50px 20px 50px;
+    }
+  }
+
+  #contact-contents-container {
+    width: 40%;
+
+    @media screen and (max-width:960px) {
+      order: 1;
+      width: 70%;
+    }
+
+    @media screen and (max-width:480px) {
+      width: 100%;
+    }
+
+    .content-text {
+      
+      @media screen and (max-width:480px) {
+       font-size: 1.2rem;
+      }
+    }
+  }
+
+  #contact-img-container {
+    width: 50%;
+
+    @media screen and (max-width:960px) {
+      width: 70%;
+      margin-bottom: 50px;
+      order: 0;
+    }
+
+    @media screen and (max-width:480px) {
+      width: 100%;
+    }
+  }
+}
+
+//-----------------
+// footer
+//-----------------
+#footer {
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+
+  p {
+    font-size: 0.8rem;
+    font-family:  "Montserrat light";
+  }
+}

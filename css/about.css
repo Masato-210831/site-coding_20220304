@@ -1,0 +1,439 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: "Montserrat", "Montserrat Medium", "Noto Sans JP";
+  position: relative;
+}
+
+.wrapper {
+  max-width: 1600px;
+  padding: 0 150px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 960px) {
+  .wrapper {
+    padding: 0 50px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+}
+
+.sub-title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.content-text {
+  font-family: "Montserrat light";
+  font-size: 1rem;
+}
+
+.read-more {
+  background: #000;
+  width: 140px;
+  height: 35px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.read-more a {
+  color: #fff;
+  font-size: 0.6rem;
+  line-height: 35px;
+}
+
+#header {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  z-index: 20;
+}
+
+@media screen and (max-width: 480px) {
+  #header {
+    height: 60px;
+  }
+}
+
+#header .header-container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 50px;
+}
+
+@media screen and (max-width: 480px) {
+  #header .header-container {
+    padding: 0 20px;
+  }
+}
+
+#header .header-container #site-logo {
+  width: 250px;
+}
+
+#header .header-container #site-logo a img {
+  width: 100%;
+}
+
+#header .header-container #menu-list-container {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  bottom: 0;
+  background: #000;
+  opacity: 0;
+  width: 400px;
+  padding: 100px;
+  z-index: 10;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#header .header-container #menu-list-container #menu-list {
+  text-align: center;
+}
+
+#header .header-container #menu-list-container #menu-list #menu-image {
+  width: 50px;
+  margin: 0 auto 30px;
+}
+
+#header .header-container #menu-list-container #menu-list #menu-image a img {
+  width: 100%;
+}
+
+#header .header-container #menu-list-container #menu-context li {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+}
+
+#header .header-container #menu-list-container #menu-context li a {
+  color: #fff;
+}
+
+#header .header-container #link-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  color: #fff;
+  z-index: 15;
+}
+
+#header .header-container #link-btn .hamburger-btn {
+  height: 14px;
+  width: 30px;
+  position: relative;
+  margin-right: 10px;
+}
+
+#header .header-container #link-btn .hamburger-btn span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  border-radius: 5px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#header .header-container #link-btn .hamburger-btn span:nth-child(2) {
+  top: 7px;
+}
+
+#header .header-container #link-btn .hamburger-btn span:nth-child(3) {
+  top: 14px;
+}
+
+#header .header-container #link-btn .menu-heading {
+  font-size: 18px;
+}
+
+#header.open #mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #616161;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+#header.open #menu-list-container {
+  right: 0;
+  opacity: .8;
+}
+
+#header.open #link-btn span:nth-child(1) {
+  top: 7px;
+  -webkit-transform: rotate(220deg);
+          transform: rotate(220deg);
+}
+
+#header.open #link-btn span:nth-child(2) {
+  display: none;
+}
+
+#header.open #link-btn span:nth-child(3) {
+  -webkit-transform: translateY(-7px) rotate(-220deg);
+          transform: translateY(-7px) rotate(-220deg);
+}
+
+#top-screen-container {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  z-index: 0;
+}
+
+@media screen and (max-width: 960px) {
+  #top-screen-container {
+    height: 615px;
+  }
+}
+
+#top-screen-container #top-screen {
+  position: absolute;
+  width: 70%;
+  height: 90%;
+  overflow: hidden;
+  z-index: 10;
+}
+
+#top-screen-container #top-screen img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#top-screen-container #blackarea {
+  width: 50%;
+  height: 100%;
+  background: #000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#top-screen-container .blackarea-text {
+  color: #fff;
+  position: absolute;
+  top: 30%;
+  right: 18%;
+  z-index: 20;
+}
+
+@media screen and (max-width: 480px) {
+  #top-screen-container .blackarea-text {
+    top: 25%;
+    right: 35px;
+  }
+}
+
+#top-screen-container .blackarea-text p {
+  font-size: 1.5rem;
+  font-family: "Montserrat light";
+}
+
+#top-screen-container .blackarea-text h1 {
+  font-size: 5rem;
+  line-height: 6rem;
+}
+
+@media screen and (max-width: 480px) {
+  #top-screen-container .blackarea-text h1 {
+    font-size: 4rem;
+  }
+}
+
+#vision {
+  margin-top: 200px;
+}
+
+#vision .vision-container {
+  margin-left: 25%;
+}
+
+@media screen and (max-width: 480px) {
+  #vision .vision-container {
+    margin: 0;
+  }
+}
+
+#vision .vision-container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+#vision .vision-container p {
+  margin-bottom: 20px;
+}
+
+#ceo-message {
+  margin-top: 100px;
+  min-height: 950px;
+}
+
+@media screen and (max-width: 480px) {
+  #ceo-message {
+    min-height: 1100px;
+  }
+}
+
+#ceo-message .mg-whole-container {
+  width: 100%;
+  position: relative;
+}
+
+#ceo-message .mg-whole-container img {
+  width: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+@media screen and (max-width: 480px) {
+  #ceo-message .mg-whole-container img {
+    position: relative;
+    top: 0px;
+    left: -20px;
+  }
+}
+
+#ceo-message .mg-whole-container #content-area {
+  position: absolute;
+  top: 150px;
+  right: 0;
+  left: 300px;
+  background: #ddd;
+  z-index: 1;
+  padding: 100px 0 100px;
+}
+
+@media screen and (max-width: 960px) {
+  #ceo-message .mg-whole-container #content-area {
+    top: 180px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #ceo-message .mg-whole-container #content-area {
+    top: 200px;
+    left: 0;
+    width: 100%;
+  }
+}
+
+#ceo-message .mg-whole-container #content-area #message-container {
+  width: 100%;
+  padding: 0 25%;
+}
+
+@media screen and (max-width: 960px) {
+  #ceo-message .mg-whole-container #content-area #message-container {
+    padding: 0 10%;
+  }
+}
+
+#ceo-message .mg-whole-container #content-area #message-container p {
+  margin-bottom: 20px;
+  line-height: 1.8rem;
+}
+
+#company .sub-title {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 0;
+}
+
+#company #company-contents {
+  width: 60%;
+  margin-left: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 1fr;
+      grid-template-columns: 20% 1fr;
+}
+
+@media screen and (max-width: 960px) {
+  #company #company-contents {
+    padding-left: 30px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #company #company-contents {
+    padding: 0;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+  }
+}
+
+#company #company-contents dt {
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+
+#company #company-contents dd {
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  font-family: "Montserrat Medium";
+}
+
+#company iframe {
+  height: 450px;
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 960px) {
+  #company iframe {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #company iframe {
+    height: 470px;
+  }
+}
+
+#footer {
+  margin-top: 150px;
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+#footer p {
+  font-size: 0.8rem;
+  font-family: "Montserrat light";
+}
+/*# sourceMappingURL=about.css.map */
