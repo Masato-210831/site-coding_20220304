@@ -9,8 +9,8 @@ body {
 }
 
 .wrapper {
-  max-width: 1600px;
-  padding: 0 150px;
+  max-width: 1100px;
+  padding: 0 30px;
   margin: 0 auto;
 
   @media screen and (max-width:960px) {
@@ -53,6 +53,11 @@ body {
   height: 35px;
   text-align: center;
   margin-top: 30px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .8;
+  }
 
   @media screen and (max-width:480px) {
     width: 180px;
@@ -75,11 +80,13 @@ body {
 // header
 // ---------
 #header {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100px;
   top: 0;
   z-index: 20;
+  transition: .3s;
+
 
   .header-container{
     height: 100%;
@@ -145,6 +152,10 @@ body {
 
           a {
             color: #fff;
+
+            &:hover {
+              border-bottom: 2px solid #fff;
+            }
           }
         }
       }
@@ -225,6 +236,10 @@ body {
         transform: translateY(-7px) rotate(-220deg) ;
       }
     }
+  }
+
+  &.black {
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
 }
@@ -318,59 +333,48 @@ body {
 // ----------------------
 #about {
   margin-top: 100px;
+  position: relative;
+  padding-bottom: 50px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background: #ddd;
+    height: 160px;
+    width: 100%;
+    display: block;
+    bottom: 0;
+    z-index: -1;
+  }
 
   @media screen and (max-width:960px) {
     padding: 0;
   }
 
   #about-img {
-    position: relative;
-    max-width: 1600px;
-    
-    img {
-      width: 100%;
+    background-image: url(../img/about-img.png);
+    background-size: cover;
+    padding: 110px 0 110px 50px;
 
-      @media screen and (max-width:480px) {
-        height: 590px;
-        object-fit: cover;
-      }
+    &.wrapper {
+      max-width: 1060px;
+    }
+
+    @media screen and (max-width: 960px) {
+      padding: 50px 4vw;
     }
   }
 
   #about-content-area {
-    position: absolute;
-    top: calc((100% - 65%) / 2);
-    left: 5%;
-    width: 55%;
-    height: 65%;
+    max-width: 600px;
     background: #fff;
     opacity: .9;
-    padding: 40px 25px;
-    overflow: scroll;
+    padding: 30px;
 
     @media screen and (max-width:960px) {
-      top: calc((100% - 75%) / 2);
-      left: calc((100% - 75%) / 2);
-      height: 75%;
-      width: 75%;
+      margin: 0 auto;
+
     }
-
-    @media screen and (max-width:480px) {
-      top: calc((100% - 80%) / 2);
-      left: calc((100% - 90%) / 2);
-      height: 80%;
-      width: 90%;
-      padding: 40px 40px;
-    }
-
-    .sub-title {
-      margin-bottom: 15px;
-
-      @media screen and (max-width:480px) {
-        margin-bottom: 20px;
-      }
-    }
-
   }
 }
 
@@ -378,20 +382,10 @@ body {
 // works & culture
 //----------------------
 #works_culture {
-  position: relative;
+  background: #ddd;
  
-  #back-layer {
-    position: absolute;
-    background:#ddd;
-    top: -200px;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-
   .works-culture-container {
-    margin-top: 50px;
+    padding-top: 50px;
     padding-bottom: 50px;
     display: flex;
     justify-content: space-between;
@@ -461,40 +455,54 @@ body {
     }
 
     #topics-contents {
-
-      dt {
-        font-size: 0.7rem;
-        color: #ddd;
-        margin-top: 30px;
-
-        @media screen and (max-width:960px) {
-          font-size: 1rem;
-        }
-
-        @media screen and (max-width:480px) {
-          font-size: 0.8rem;
-        }
-
-        &:first-child {
-          margin-top: 0;
-        }
-      }
-
-      dd {
-        font-family: "Montserrat light";
-        font-size: 0.9rem;
-        font-weight: bold;
+      li {
         border-bottom: 1px solid #ddd;
-        padding: 8px 0;
+        margin-bottom: 30px;
 
-        @media screen and (max-width:960px) {
-          font-size: 1.2rem;
+        a {
+          display: inline-block;
+          transition: .3s;
+
+          time {
+            font-size: 0.7rem;
+            color: #ddd;
+            margin-top: 30px;
+    
+            @media screen and (max-width:960px) {
+              font-size: 1rem;
+            }
+    
+            @media screen and (max-width:480px) {
+              font-size: 0.8rem;
+            }
+    
+            &:first-child {
+              margin-top: 0;
+            }
+          }
+    
+          h3 {
+            font-family: "Montserrat light";
+            font-size: 0.9rem;
+            font-weight: bold;
+            padding-bottom: 8px;
+    
+            @media screen and (max-width:960px) {
+              font-size: 1.2rem;
+            }
+    
+            @media screen and (max-width:480px) {
+              font-size: 1rem;
+            }
+          }
+
+          &:hover {
+            opacity: .5;
+          }
         }
 
-        @media screen and (max-width:480px) {
-          font-size: 1rem;
-        }
       }
+
     }
 
     .read-more {
@@ -511,27 +519,20 @@ body {
 // contact
 //------------------
 #contact {
-  margin-top: 50px;
   background: #ddd;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-top: 50px;
+  padding: 100px 0;
 
-  @media screen and (max-width:960px) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  &.wrapper {
-    padding: 50px 200px 100px;
-
+  .contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
     @media screen and (max-width:960px) {
-      padding: 50px 50px 150px;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
-    @media screen and (max-width:480px) {
-      padding: 50px 20px 50px;
-    }
   }
 
   #contact-contents-container {

@@ -9,8 +9,8 @@ body {
 }
 
 .wrapper {
-  max-width: 1600px;
-  padding: 0 150px;
+  max-width: 1000px;
+  padding: 0 30px;
   margin: 0 auto;
 
   @media screen and (max-width:960px) {
@@ -51,11 +51,12 @@ body {
 // header
 // ---------
 #header {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100px;
   top: 0;
   z-index: 20;
+  transition: .3s;
 
   @media screen and (max-width:480px) {
     height: 60px;
@@ -116,6 +117,10 @@ body {
 
           a {
             color: #fff;
+
+            &:hover {
+              border-bottom: 2px solid #fff;
+            }
           }
         }
       }
@@ -198,6 +203,9 @@ body {
     }
   }
 
+  &.black {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 }
 
 //---------------------
@@ -265,6 +273,10 @@ body {
     }
   }
 
+  &.black {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
 }
 
 
@@ -298,57 +310,60 @@ body {
 //---------------
 #ceo-message {
   margin-top: 100px;
-  min-height: 950px;
+  margin-bottom: 100px;
+  // min-height: 950px;
   
   @media screen and (max-width:480px) {
     min-height: 1100px;
   }
 
   .mg-whole-container {
-    width: 100%;
     position: relative;
+    padding-top: 150px;
 
-    img {
-      width: 400px;
+    .image-container {
+      width: 40%;
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 100;
+
+      @media screen and (max-width:960px) {
+        width: 100%;
+        max-width: 320px;
+      }
 
       @media screen and (max-width:480px) {
-        position: relative;
-        top: 0px;
+        max-width: 90%;
         left: -20px;
-       }
+      }
+    }
+
+    img {
+      width: 100%;
+
+      @media screen and (max-width:480px) {
+        height: 226px;
+        object-fit: cover;
+      }
     }
 
     #content-area {
-      position: absolute;
-      top: 150px;
-      right: 0;
-      left: 300px;
+      width: 650px;
+      max-width: 70%;
       background: #ddd;
-      // width: 800px;
-      z-index: 1;
-      padding: 100px 0 100px;
-
-      @media screen and (max-width:960px) {
-        top: 180px;
-      }
+      padding: 100px 0 50px;
+      margin-left: auto;
 
       @media screen and (max-width:480px) {
-        top: 200px;
-        left: 0;
         width: 100%;
+        max-width: 100%;
       }
-  
-      #message-container {
-        width: 100%;
-        padding: 0 25%;
 
-         @media screen and (max-width:960px) {
-           padding: 0 10%;
-      }
+
+      #message-container {
+        max-width: 400px;
+        padding: 0 30px;
+        margin: 0 auto;
 
         p {
           margin-bottom: 20px;

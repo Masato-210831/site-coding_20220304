@@ -9,8 +9,8 @@ body {
 }
 
 .wrapper {
-  max-width: 1600px;
-  padding: 0 150px;
+  max-width: 1000px;
+  padding: 0 30px;
   margin: 0 auto;
 }
 
@@ -51,11 +51,13 @@ body {
 }
 
 #header {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100px;
   top: 0;
   z-index: 20;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 @media screen and (max-width: 480px) {
@@ -126,6 +128,10 @@ body {
 
 #header .header-container #menu-list-container #menu-context li a {
   color: #fff;
+}
+
+#header .header-container #menu-list-container #menu-context li a:hover {
+  border-bottom: 2px solid #fff;
 }
 
 #header .header-container #link-btn {
@@ -201,6 +207,10 @@ body {
           transform: translateY(-7px) rotate(-220deg);
 }
 
+#header.black {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 #top-screen-container {
   width: 100%;
   height: 50vh;
@@ -270,6 +280,10 @@ body {
   }
 }
 
+#top-screen-container.black {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 #vision {
   margin-top: 200px;
 }
@@ -295,7 +309,7 @@ body {
 
 #ceo-message {
   margin-top: 100px;
-  min-height: 950px;
+  margin-bottom: 100px;
 }
 
 @media screen and (max-width: 480px) {
@@ -305,59 +319,62 @@ body {
 }
 
 #ceo-message .mg-whole-container {
-  width: 100%;
   position: relative;
+  padding-top: 150px;
 }
 
-#ceo-message .mg-whole-container img {
-  width: 400px;
+#ceo-message .mg-whole-container .image-container {
+  width: 40%;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
+}
+
+@media screen and (max-width: 960px) {
+  #ceo-message .mg-whole-container .image-container {
+    width: 100%;
+    max-width: 320px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-  #ceo-message .mg-whole-container img {
-    position: relative;
-    top: 0px;
+  #ceo-message .mg-whole-container .image-container {
+    max-width: 90%;
     left: -20px;
   }
 }
 
-#ceo-message .mg-whole-container #content-area {
-  position: absolute;
-  top: 150px;
-  right: 0;
-  left: 300px;
-  background: #ddd;
-  z-index: 1;
-  padding: 100px 0 100px;
+#ceo-message .mg-whole-container img {
+  width: 100%;
 }
 
-@media screen and (max-width: 960px) {
-  #ceo-message .mg-whole-container #content-area {
-    top: 180px;
+@media screen and (max-width: 480px) {
+  #ceo-message .mg-whole-container img {
+    height: 226px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
+}
+
+#ceo-message .mg-whole-container #content-area {
+  width: 650px;
+  max-width: 70%;
+  background: #ddd;
+  padding: 100px 0 50px;
+  margin-left: auto;
 }
 
 @media screen and (max-width: 480px) {
   #ceo-message .mg-whole-container #content-area {
-    top: 200px;
-    left: 0;
     width: 100%;
+    max-width: 100%;
   }
 }
 
 #ceo-message .mg-whole-container #content-area #message-container {
-  width: 100%;
-  padding: 0 25%;
-}
-
-@media screen and (max-width: 960px) {
-  #ceo-message .mg-whole-container #content-area #message-container {
-    padding: 0 10%;
-  }
+  max-width: 400px;
+  padding: 0 30px;
+  margin: 0 auto;
 }
 
 #ceo-message .mg-whole-container #content-area #message-container p {

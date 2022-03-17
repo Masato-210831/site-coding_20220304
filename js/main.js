@@ -25,6 +25,22 @@
   })
 
 
+  // ---------------------------------
+  // ヘッダーのスクロールイベント
+  //----------------------------------
+  const screen = document.getElementById('top-screen-container');
+  
+  //top画面の高さを取得
+  let height = screen.clientHeight - 40;
+
+  window.addEventListener('scroll', () => {
+    console.log(window.scrollY);
+    if(height < window.scrollY) {
+      header.classList.add('black'); 
+    } else {
+      header.classList.remove('black');
+    }
+  } )
 
 
 

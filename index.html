@@ -74,11 +74,11 @@
     </div>
 
     <!-- アバウト -->
-    <section id="about" class="wrapper">
+    <section id="about">
 
       <!-- about us -->
-      <div id="about-img">
-        <img src="img/about-img.png" alt="about-img">
+      <div id="about-img" class="wrapper">
+        <!-- <img src="img/about-img.png" alt="about-img"> -->
         <div id="about-content-area">
           <h2 class="sub-title">ABOUT US</h2>
           <p class="content-text">DIGSMILEは、デザインで人を笑顔にする会社。</p>
@@ -93,9 +93,9 @@
     </section>
     
     <!-- works & culture -->
-    <div id="works_culture" class="wrapper">
-      <div id="back-layer"></div>
-      <div class="works-culture-container">
+    <div id="works_culture">
+      <!-- <div id="back-layer"></div> -->
+      <div class="works-culture-container wrapper">
         <section id="works">
           <h2 class="sub-title">WORKS</h2>
           <img src="img/works-img.png" alt="works">
@@ -121,14 +121,26 @@
         <h2 class="sub-title">LATEST TOPICS</h2>
       </div>
       <div id="topics-container">
-        <dl id="topics-contents">
-          <dt>2020.02.01</dt>
-          <dd>イベントレポート「VRクリエイター座談会 〜5Gの次に来るもの〜」</dd>
-          <dt>2020.01.18</dt>
-          <dd>プレスリリースのお知らせ DIGGIN’ RECORDS</dd>
-          <dt>2020.01.01</dt>
-          <dd>新年明けましておめでとうございます</dd>
-        </dl>
+        <ul id="topics-contents">
+          <li>
+            <a href="#">
+              <time>2020.02.01</time>
+              <h3>イベントレポート「VRクリエイター座談会 〜5Gの次に来るもの〜」</h3>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <time>2020.01.18</time>
+              <h3>プレスリリースのお知らせ DIGGIN’ RECORDS</h3>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <time>2020.01.01</time>
+              <h3>新年明けましておめでとうございます</h3>
+            </a>
+          </li>
+        </ul>
         <div class="read-more">
           <a href="#">READ MORE</a>
           </div>
@@ -136,19 +148,21 @@
     </section>
 
     <!-- contact -->
-    <section id="contact" class="wrapper">
-      <div id="contact-contents-container">
-        <div id="contact-contents">
-          <h2 class="sub-title">CONTACT</h2>
-          <p class="content-text">制作の依頼、取材の依頼、IRや採用についての連絡・お問い合わせはコンタクトページから承っております。<br>
-            まずはお気軽にご連絡ください。担当者から改めて返信いたします。</p>
+    <section id="contact">
+      <div class="wrapper contact-wrapper">
+        <div id="contact-contents-container">
+          <div id="contact-contents">
+            <h2 class="sub-title">CONTACT</h2>
+            <p class="content-text">制作の依頼、取材の依頼、IRや採用についての連絡・お問い合わせはコンタクトページから承っております。<br>
+              まずはお気軽にご連絡ください。担当者から改めて返信いたします。</p>
+          </div>
+          <div class="read-more">
+            <a href="contact.html">READ MORE</a>
+          </div>
         </div>
-        <div class="read-more">
-          <a href="contact.html">READ MORE</a>
+        <div id="contact-img-container">
+          <img src="img/recruit-img.png" alt="contact-img">
         </div>
-      </div>
-      <div id="contact-img-container">
-        <img src="img/recruit-img.png" alt="contact-img">
       </div>
     </section>
   </main>
